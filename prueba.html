@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Simulador de retiro de dinero de un cajero</title>
+  </head>
+  <body>
+    <h1>Simulador de retiro de dinero de un cajero</h1>
+    <p>
+      Por favor ingrese la cantidad de dinero que desea retirar:
+      <input type="text" id="cantidad" />
+    </p>
+    <button onclick="realizarRetiro()">Retirar dinero</button>
+    <p id="resultado"></p>
+    <script>
+      function realizarRetiro() {
+        // Obtener la cantidad ingresada por el usuario
+        var cantidad = document.getElementById("cantidad").value;
+        cantidad = parseInt(cantidad); // Convertir a número entero
+
+        // Validar que la cantidad sea mayor a cero y múltiplo de 10
+        if (cantidad > 0 && cantidad % 10 === 0) {
+          // Mostrar un mensaje de confirmación al usuario
+          var mensaje = "Usted ha solicitado retirar $" + cantidad + ". ¿Desea continuar?";
+          if (confirm(mensaje)) {
+            // Mostrar un mensaje de éxito
+            document.getElementById("resultado").innerHTML = "Retiro de dinero exitoso. Por favor recoja su dinero.";
+          } else {
+            // Mostrar un mensaje de cancelación
+            document.getElementById("resultado").innerHTML = "Retiro de dinero cancelado.";
+          }
+        } else {
+          // Mostrar un mensaje de error
+          document.getElementById("resultado").innerHTML = "Error: la cantidad ingresada no es válida.";
+        }
+      }
+    </script>
+  </body>
+</html>
+
+
+
+function withdrawMoney(amount) {
+    // Denominaciones de billetes disponibles en el cajero
+    const denominations = [50000, 20000, 10000, 5000];
+  
+    // Verifica si el valor a retirar es válido
+    if (amount >= 50000 && amount <= 1200000 && amount % 5000 === 0) {
+      // Inicializa una variable para almacenar el mensaje de salida
+      let output = "Se entregaron los siguientes billetes: ";
+  
+      // Itera sobre las denominaciones de billetes disponibles
+      for (let i = 0; i < denominations.length; i++) {
+        // Calcula la cantidad de billetes de la denominación actual
+        let count = Math.floor(amount / denominations[i]);
+  
+        // Si se encontraron billetes de la denominación actual, agrega
+        // una línea al mensaje de salida con la cantidad de billetes y
+        // la denominación, y resta la cantidad de billetes del valor
+        // total a retirar
+        if (count > 0) {
+          output += count + " billetes de $" + denominations[i] + ", ";
+          amount -= count * denominations[i];
+        }
+      }
+  
+      // Devuelve el mensaje de salida
+      return output;
+    } else {
+      // Si el valor a retirar es inválido, devuelve un mensaje de error
+      return "El valor ingresado es inválido. Debe ser un número entero positivo " +
+             "mayor o igual a $50.000 y menor o igual a $1.200.000, y debe ser " +
+             "múltiplo de $5.000.";
+    }
+  }
+  
