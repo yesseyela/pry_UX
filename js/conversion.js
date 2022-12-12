@@ -1,13 +1,13 @@
 function sumarRestarSegundos() {
-    var horas = parseint(document.getElementById("txt_horas").value);
-    var minutos = parseint(document.getElementById("txt_minutos").value);
-    var segundos = parseint(document.getElementById("txt_segundos").value);
+    let horas = parseint(document.getElementById("txt_horas").value);
+    let minutos = parseint(document.getElementById("txt_minutos").value);
+    let segundos = parseint(document.getElementById("txt_segundos").value);
 
     var segundosTotales = (horas * 3600) + (minutos * 60) + segundos;
   
-    var numero = parseint(document.getElementById("txt_numero").value);
+    let numero = parseint(document.getElementById("txt_numero").value);
   
-    var opcion = document.getElementById("lstope").value;
+    let opcion = document.getElementById("lstope").value;
   
     // Realizamos la suma o la resta en función de la opción seleccionada
     if (opcion == "+") {
@@ -22,7 +22,7 @@ function sumarRestarSegundos() {
     var segundosResultado = segundosTotales % 60;
   
     // Mostramos el resultado en una caja de texto
-    document.getElementById("resultado").value = horasResultado + "h " + minutosResultado + "m " + segundosResultado + "s";
+   document.getElementById("resultado").value = horasResultado + "h " + minutosResultado + "m " + segundosResultado + "s";
 }
 
   
