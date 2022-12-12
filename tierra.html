@@ -7,8 +7,36 @@
     <title>Tierra</title>
     <link rel="stylesheet" href="estilos/estilos.css">
 </head>
-<body class="principal">
+<body class="principal" style="text-align: center;">
     <h1>AppWeb</h1>
+    <h4>Movimiento de Rotación de la Tierra</h4>
+    <img src="imagenes/rotacion.png" alt="" width="500px">
+    <div class="div_movimiento">
+        <label>Digite el tiempo a convertir</label>
+        <br>
+        <label for="">Horas:</label>
+        <input type="number" name="txt_horas" id="txt_horas">
+        <br>
+        <hr>
+        <label for="">Minutos:</label>
+        <input type="number" name="txt_minutos" id="txt_minutos">
+        <br>
+        <hr>
+        <label for="">Segundos:</label>
+        <input type="number" name="txt_segundos" id="txt_segundos">
+        <br>
+        <hr>
+        <input onclick="convertir()" type="submit" value="Enviar">
+        <br>
+        <hr>
+        <br>
+        <label for="" id="resultado"></label>
+    </div>
+    <br>
+    <a href="index.html">Volver Inicio</a>
+    
+    <script src="tierra.js"></script>
+ </body>
     <hr>
 
     <a class="foot" href="index.html">Volver Inicio</a>
