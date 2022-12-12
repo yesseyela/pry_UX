@@ -10,13 +10,46 @@
 <body class="principal">
     <h1>AppWeb</h1>
     <hr>
+    <h2>Conversión</h2>
+    
+    <div class="div_retiro">
+        <label>Digite la cantidad de horas</label>
+        <br>
+        <input type="number" name="txt_horas" id="txt_horas">
+        <br>
+        <label>Digite la cantidad de minutos</label>
+        <br>
+        <input type="number" name="txt_minutos" id="txt_minutos">
+        <br>
+        <label>Digite la cantidad de segundos</label>
+        <br>
+        <input type="number" name="txt_segundos" id="txt_segundos">
+        <br>
+        <label>Digite la cantidad a sumar</label>
+        <br>
+        <input type="number" name="txt_numero" id="txt_numero">
+        <br>
+        <label>Seleccione operador</label>
+        <select name="lstope" id="lstope">
+            <option value="+">Suma</option>
+            <option value="-">Resta</option>
+        </select>
+        <hr>
+        <input onclick="sumarRestarSegundos()" type="submit" value="Enviar">
+        <br>
+        
+        <hr>
+        <p id="resultado"></p>
+    </div>
 
     <a class="foot"href="index.html">Volver Inicio</a>
     <br>
     <br>
-    <footer>
+    <!-- <footer>
         <p class="p_foot">By: Verónica Vera - Camila Yela </p>
         <img class= "imgfoot" src="imagenes/logo_color.png" alt="">
-    </footer>
+    </footer> -->
+
+    <script src="js/conversion.js"></script>
 </body>
 </html>
